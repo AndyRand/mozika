@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\assets\" />
+    <Folder Include="wwwroot\assets\css\" />
+    <Folder Include="wwwroot\assets\fonts\" />
+    <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="wwwroot\assets\js\" />
+    <Folder Include="wwwroot\assets\syntax-highlighter\" />
+    <Folder Include="Pages\Templates\" />
+    <Folder Include="Support\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Pages\Operations\" />
+    <Folder Include="Pages\Sales\" />
+    <Folder Include="Configurations\" />
+    <Folder Include="Pages\Medias\Album\" />
+    <Folder Include="Pages\Medias\Artist\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Requirements\" />
+    <Folder Include="Services\Handlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.11" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mozika.AdoNet\Mozika.AdoNet.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,122 @@
+﻿@page
+@model InvoiceModel
+@{
+    ViewData["Title"] = "Invoice";
+    Layout = "_Layout";
+}
+
+<div class="d-flex">
+    <nav id="breadcrumbs" class="mb-3">
+        <ul>
+            <li><a href="#"> <i class="uil-home-alt"></i> </a></li>
+            <li><a href="#"> Sales </a></li>
+            <li>All Invoices</li>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header actions-toolbar border-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="d-inline-block mb-0">All Invoices</h4>
+            <div class="d-flex">
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="Search invoice">
+                    <i class="uil-search"></i>
+                </a>
+                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input shadow-0 uk-form-small" type="search"
+                               placeholder="Search for an invoice..." autofocus>
+                    </form>
+                </div>
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="filter">
+                    <i class="uil-filter"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#"> Newest </a></li>
+                        <li><a href="#">From A-Z</a></li>
+                        <li><a href="#">From Z-A</a></li>
+                    </ul>
+                </div>
+
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="More">
+                    <i class="uil-ellipsis-h"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="#"> Refresh </a></li>
+                        <li><a href="#">Manage</a></li>
+                        <li><a href="#">Setting</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead>
+                <tr>
+                    <th scope="col">InvoiceId</th>
+                    <th scope="col">CustomerId</th>
+                    <th scope="col">InvoiceDate</th>
+                    <th scope="col">BillingAddress</th>
+                    <th scope="col">BillingCity</th>
+                    <th scope="col">BillingState</th>
+                    <th scope="col">BillingCountry</th>
+                    <th scope="col">BillingPostalCode</th>
+                    <th scope="col">Total</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody class="list">
+
+                @foreach (var invoice in @Model.invoices)
+                {
+                <tr>
+
+                    <td> @invoice.InvoiceId </td>
+                    <td> @invoice.CustomerId </td>
+                    <td> @invoice.InvoiceDate </td>
+                    <td> @invoice.BillingAddress </td>
+                    <td> @invoice.BillingCity </td>
+                    <td> @invoice.BillingState </td>
+                    <td> @invoice.BillingCountry </td>
+                    <td> @invoice.BillingPostalCode </td>
+                    <td> @invoice.Total </td>
+                    <td class="text-right">
+                        <!-- Actions -->
+                        <div class="actions ml-3">
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Quick view">
+                                <i class="uil-external-link-alt "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Edit">
+                                <i class="uil-pen "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Delete user">
+                                <i class="uil-trash-alt text-danger"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<partial name="Partial Pages/Pagination" model="@(new PaginationModel (Model.all.Count, "/Sales/Invoice"))" />

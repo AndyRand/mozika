@@ -1,0 +1,136 @@
+﻿@page
+@using Mozika.Domain.ApiModels;
+@model TrackModel
+@{
+    ViewData["Title"] = "All tracks";
+    Layout = "_Layout";
+}
+
+<div class="d-flex">
+    <nav id="breadcrumbs" class="mb-3">
+        <ul>
+            <li><a href="#"> <i class="uil-home-alt"></i> </a></li>
+            <li><a href="#"> Medias </a></li>
+            <li>All tracks</li>
+        </ul>
+    </nav>
+</div>
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header actions-toolbar border-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="d-inline-block mb-0">All Tracks</h4>
+            <div class="d-flex">
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="Search product">
+                    <i class="uil-search"></i>
+                </a>
+                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input shadow-0 uk-form-small" type="search"
+                               placeholder="Search your song..." autofocus>
+                    </form>
+                </div>
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="filter">
+                    <i class="uil-filter"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#"> Newest </a></li>
+                        <li><a href="#">From A-Z</a></li>
+                        <li><a href="#">From Z-A</a></li>
+                    </ul>
+                </div>
+
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="More">
+                    <i class="uil-ellipsis-h"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="#"> Refresh </a></li>
+                        <li><a href="#">Manage</a></li>
+                        <li><a href="#">Setting</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead>
+                <tr>
+                    <th scope="col">Track No</th>
+                    <th scope="col">Song title</th>
+                    @*<th scope="col">AlbumId</th>
+                    <th scope="col">MediaTypeId</th>
+                    <th scope="col">GenreId</th>
+                    <th scope="col">Composer</th>
+                    <th scope="col">Milliseconds</th>*@
+                    <th scope="col">Sample</th>
+                    <th scope="col">UnitPrice</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                @{
+                    IList<TrackApiModel> tracks = Model.tracks;
+                    if (tracks != null && tracks.Count() > 0)
+                    {
+                        foreach (var track in tracks)
+                        {
+                                <tr>
+                                    
+                                    <td> @track.TrackId </td>
+                                    <td>
+                                        <div class="media-body ml-4">
+                                            <a href="#" class="name h6 mb-0 text-sm">@track.Name</a>
+                                            <small class="d-block font-weight-bold">@track.Composer</small>
+                                        </div>
+                                    </td>
+                                    @*<td> @track.AlbumId </td>
+                                    <td> @track.MediaTypeId</td>
+                                    <td> @track.GenreId</td>*@
+                                    @*<td> @track.Milliseconds</td>*@
+                                    <td>
+                                        <div class="progress" style="height: 7px;">
+                                            <div class="progress-bar" role="progressbar" style="width: @TrackModel.GetPercentage((double)track.Bytes);"></div>
+                                        </div>
+                                    </td>
+                                    <td>$ @track.UnitPrice</td>
+                                    <td class="text-right">
+                                        <!-- Actions -->
+                                        <div class="actions ml-3">
+                                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                                               uk-tooltip="Quick view">
+                                                <i class="uil-external-link-alt "></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                                               uk-tooltip="Edit">
+                                                <i class="uil-pen "></i>
+                                            </a>
+                                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                                               uk-tooltip="Delete user">
+                                                <i class="uil-trash-alt text-danger"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                        }
+                    }
+
+                    else
+                    {
+                        <div uk-spinner="ratio: 2"></div>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<partial name="Partial Pages/Pagination" model="@(new PaginationModel (Model.all.Count, "/Medias/Track"))" />

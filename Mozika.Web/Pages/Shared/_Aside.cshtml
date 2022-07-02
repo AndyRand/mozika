@@ -1,0 +1,43 @@
+﻿<!-- menu -->
+<div class="page-menu">
+    <!-- btn close on small devices -->
+    <span class="btn-menu-close" uk-toggle="target: #wrapper ; cls: mobile-active"></span>
+    <!-- traiger btn -->
+    <span class="btn-menu-trigger" uk-toggle="target: .page-menu ; cls: menu-large"></span>
+
+    <!-- logo -->
+    <div class="logo uk-visible@s">
+        <a href="#"> <i class=" icon-feather-music"></i> <span> Mozika.com</span> </a>
+    </div>
+    <div class="page-menu-inner" data-simplebar>
+        <ul data-submenu-title="Medias">
+            <li><a asp-page="/Medias/Artist"><i class="icon-line-awesome-heart"></i> <span> Artist</span></a> </li>
+            <li><a asp-page="/Medias/Album"><i class="icon-line-awesome-file-sound-o"></i> <span> Album</span></a> </li>
+            <li><a asp-page="/Medias/Playlist"><i class="icon-line-awesome-play-circle"></i> <span> Playlist</span></a> </li>
+            <li><a asp-page="/Medias/Track"><i class="icon-line-awesome-music"></i> <span> All Tracks</span></a> </li>
+        </ul>
+
+        <ul data-submenu-title="Sales">
+            <li><a asp-page="/Sales/Invoice"><i class="icon-material-outline-money"></i> <span> Invoices</span></a> </li>
+        </ul>
+
+        <ul data-submenu-title="Operations">
+            <li><a asp-page="/Operations/Employee"><i class="icon-material-outline-person-pin"></i> <span> Employee</span></a> </li>
+            <li><a asp-page="/Operations/Customer"><i class="icon-feather-users"></i> <span> Customer</span></a> </li>
+        </ul>
+
+        <ul data-submenu-title="Setting">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <li><a href="#"><i class="icon-feather-user"></i> <span> Profile </span></a> </li>
+                <li><a asp-controller="Account" asp-action="Logout"><i class="uil-sign-out-alt"></i> <span> Sign-out</span></a> </li>
+            }
+            else
+            {
+                <li><a href="#"><i class="uil-cog"></i> <span> General </span></a> </li>
+                <li><a asp-controller="Account" asp-action="Login"><i class="uil-sign-out-alt"></i> <span> Login</span></a> </li>
+            }
+        </ul>
+
+    </div>
+</div>

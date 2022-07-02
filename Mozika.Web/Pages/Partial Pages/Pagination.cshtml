@@ -1,0 +1,26 @@
+﻿@model PaginationModel
+
+<ul class="uk-pagination my-5 uk-flex-center" uk-margin>
+    @{
+        int isMiddle = 0;
+    }
+    @for (var i = 0; i < Model.paginationApiModel.TotalPages; i++)
+    {
+        if (i < 8 || Model.paginationApiModel.TotalPages<16)
+        {
+            <li><a asp-page="@Model.paginationApiModel.UrlParams" asp-route-paginationId="@(i)"> @(i + 1) </a></li>
+        }
+        else if (Model.paginationApiModel.TotalPages>15 && Model.paginationApiModel.TotalPages - i < 4)
+        {
+            <li><a asp-page="@Model.paginationApiModel.UrlParams" asp-route-paginationId="@(i)"> @(i + 1) </a></li>
+        }
+        else if (isMiddle == 0)
+        {
+            <li class="uk-disabled"><span>...</span></li>
+            <li class="uk-disabled"><span>...</span></li>
+            isMiddle++;
+        }
+    }
+
+
+</ul>

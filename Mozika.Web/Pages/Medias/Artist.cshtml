@@ -1,0 +1,64 @@
+﻿@page
+@model ArtistModel
+@{
+    ViewData["Title"] = "Artist";
+    Layout = "_Layout";
+}
+
+<div class="d-flex">
+    <nav id="breadcrumbs" class="mb-3">
+        <ul>
+            <li><a href="#"> <i class="uil-home-alt"></i> </a></li>
+            <li><a href="#"> Medias </a></li>
+            <li>Artists</li>
+        </ul>
+    </nav>
+</div>
+
+    <div class="section-header mb-lg-2 border-0 uk-flex-middle">
+        <div class="section-header-left">
+            <h2 class="uk-heading-line text-left"><span> All Artists </span></h2>
+        </div>
+        <div class="section-header-right">
+
+            <a href="#" uk-tooltip="title: Veiw as list; pos: top-right" title="" aria-expanded="false">
+                <i class="icon-feather-list"></i>
+            </a>
+            <div class="display-as">
+                <a href="#" class="active"
+                   uk-tooltip="title: Veiw as Grid; pos: top-right" title="" aria-expanded="false">
+                    <i class="icon-feather-grid"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid
+         uk-scrollspy="cls: uk-animation-slide-bottom-small; target: > div ; delay: 200">
+        @foreach (var artist in @Model.artists)
+        {
+            <div>
+
+                <div class="card animate-this">
+                    <div class="card-body text-center">
+                        <div class="avatar-parent-child">
+                            <img alt="Image placeholder" src="~/assets/images/avatars/avatar-2.jpg"
+                                 class="avatar  rounded-circle avatar-lg">
+                            <span class="avatar-child avatar-badge bg-success"></span>
+                        </div>
+                        <h5 class="h6 mt-4 mb-0"> @artist.GetArtistVisibleName() </h5>
+                        <a asp-page="/Medias/Artist/Details" asp-route-id="@artist.ArtistId" class="d-block text-sm text-muted mb-3">@artist.GetArtistPseudo()</a>
+                    </div>
+                    <div class="card-footer text-center py-2">
+                        <a asp-page="/Medias/Artist/Details" asp-route-id="@artist.ArtistId" class="text-muted uk-text-small"> @artist.AlbumsCount Album(s) </a>
+                    </div>
+
+                </div>
+            </div>
+        }
+            
+        </div>
+
+
+<partial name="Partial Pages/Pagination" model="@(new PaginationModel (Model.all.Count, "/Medias/Artist"))" />

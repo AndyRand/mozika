@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozika.Web", "Mozika.Web\Mozika.Web.csproj", "{5D61491E-0AA0-4A96-B28C-DC88AE476CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozika.Domain", "Mozika.Domain\Mozika.Domain.csproj", "{CDA32C8F-AE41-4739-88F1-2D9023FF9CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozika.AdoNet", "Mozika.AdoNet\Mozika.AdoNet.csproj", "{6EF39991-A1BF-424B-9841-C9817A58C61F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozika.EFCore", "Mozika.EFCore\Mozika.EFCore.csproj", "{A05520DF-8BFE-407B-86CB-CB4F84C13064}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mozika.API", "Mozika.API\Mozika.API.csproj", "{C50B1A14-7E15-4EE6-86AC-BCF636F3CFF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D61491E-0AA0-4A96-B28C-DC88AE476CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D61491E-0AA0-4A96-B28C-DC88AE476CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D61491E-0AA0-4A96-B28C-DC88AE476CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D61491E-0AA0-4A96-B28C-DC88AE476CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA32C8F-AE41-4739-88F1-2D9023FF9CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA32C8F-AE41-4739-88F1-2D9023FF9CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA32C8F-AE41-4739-88F1-2D9023FF9CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA32C8F-AE41-4739-88F1-2D9023FF9CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF39991-A1BF-424B-9841-C9817A58C61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF39991-A1BF-424B-9841-C9817A58C61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF39991-A1BF-424B-9841-C9817A58C61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF39991-A1BF-424B-9841-C9817A58C61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05520DF-8BFE-407B-86CB-CB4F84C13064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05520DF-8BFE-407B-86CB-CB4F84C13064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05520DF-8BFE-407B-86CB-CB4F84C13064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05520DF-8BFE-407B-86CB-CB4F84C13064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50B1A14-7E15-4EE6-86AC-BCF636F3CFF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50B1A14-7E15-4EE6-86AC-BCF636F3CFF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50B1A14-7E15-4EE6-86AC-BCF636F3CFF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50B1A14-7E15-4EE6-86AC-BCF636F3CFF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

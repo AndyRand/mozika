@@ -1,0 +1,122 @@
+﻿@page
+@model CustomerModel
+@{
+    ViewData["Title"] = "All Customers";
+    Layout = "_Layout";
+}
+
+<div class="d-flex">
+    <nav id="breadcrumbs" class="mb-3">
+        <ul>
+            <li><a href="#"> <i class="uil-home-alt"></i> </a></li>
+            <li><a href="#"> Medias </a></li>
+            <li>All Customers</li>
+        </ul>
+    </nav>
+</div>
+
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header actions-toolbar border-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="d-inline-block mb-0">All Customers</h4>
+            <div class="d-flex">
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="Search for a customer">
+                    <i class="uil-search"></i>
+                </a>
+                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input shadow-0 uk-form-small" type="search"
+                               placeholder="Search a customer..." autofocus>
+                    </form>
+                </div>
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="filter">
+                    <i class="uil-filter"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#"> Newest </a></li>
+                        <li><a href="#">From A-Z</a></li>
+                        <li><a href="#">From Z-A</a></li>
+                    </ul>
+                </div>
+
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="More">
+                    <i class="uil-ellipsis-h"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="#"> Refresh </a></li>
+                        <li><a href="#">Manage</a></li>
+                        <li><a href="#">Setting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead>
+                <tr>
+                    <th scope="col">CustomerId</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">PostalCode</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Fax</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">SupportRepId</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody class="list">
+                @foreach (var customer in @Model.customers)
+                {
+                <tr>
+
+                    <td> @customer.CustomerId</td>
+                    <td> @customer.FirstName </td>
+                    <td> @customer.LastName </td>
+                    <td> @customer.Company</td>
+                    <td> @customer.Address </td>
+                    <td> @customer.City </td>
+                    <td> @customer.State</td>
+                    <td> @customer.PostalCode </td>
+                    <td> @customer.Phone </td>
+                    <td> @customer.Fax </td>
+                    <td> @customer.Email</td>
+                    <td> @customer.SupportRepId </td>
+
+                    <td class="text-right">
+                        <!-- Actions -->
+                        <div class="actions ml-3">
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Quick view">
+                                <i class="uil-external-link-alt "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Edit">
+                                <i class="uil-pen "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Delete user">
+                                <i class="uil-trash-alt text-danger"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+              }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<partial name="Partial Pages/Pagination" model="@(new PaginationModel (Model.all.Count, "/Operations/Customer"))" />

@@ -1,0 +1,12 @@
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/bin/Debug/netcoreapp3.1/Mozika.AdoNet.deps.json
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/bin/Debug/netcoreapp3.1/Mozika.AdoNet.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/bin/Debug/netcoreapp3.1/Mozika.AdoNet.pdb
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/bin/Debug/netcoreapp3.1/Mozika.Domain.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/bin/Debug/netcoreapp3.1/Mozika.Domain.pdb
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.csprojAssemblyReference.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.AssemblyInfoInputs.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.AssemblyInfo.cs
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.csproj.CoreCompileInputs.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.csproj.CopyComplete
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.AdoNet/obj/Debug/netcoreapp3.1/Mozika.AdoNet.pdb

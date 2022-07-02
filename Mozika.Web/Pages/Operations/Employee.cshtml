@@ -1,0 +1,128 @@
+﻿@page
+@model EmployeeModel
+@{
+    ViewData["Title"] = "Employee";
+    Layout = "_Layout";
+}
+
+<div class="d-flex">
+    <nav id="breadcrumbs" class="mb-3">
+        <ul>
+            <li><a href="#"> <i class="uil-home-alt"></i> </a></li>
+            <li><a href="#"> Employees </a></li>
+            <li>Employee list</li>
+        </ul>
+    </nav>
+</div>
+
+<div class="card">
+    <!-- Card header -->
+    <div class="card-header actions-toolbar border-0">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="d-inline-block mb-0">Employees</h4>
+            <div class="d-flex">
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="Search employee">
+                    <i class="uil-search"></i>
+                </a>
+                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                        <input class="uk-search-input shadow-0 uk-form-small" type="search"
+                               placeholder="Search for an employee..." autofocus>
+                    </form>
+                </div>
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="filter">
+                    <i class="uil-filter"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li class="uk-active"><a href="#"> Newest </a></li>
+                        <li><a href="#">From A-Z</a></li>
+                        <li><a href="#">From Z-A</a></li>
+                    </ul>
+                </div>
+
+
+                <a href="#" class="btn btn-icon btn-hover  btn-circle" uk-tooltip="More">
+                    <i class="uil-ellipsis-h"></i>
+                </a>
+                <div uk-dropdown="pos: bottom-right ; mode: click ;animation: uk-animation-scale-up">
+                    <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="#"> Refresh </a></li>
+                        <li><a href="#">Manage</a></li>
+                        <li><a href="#">Setting</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table align-items-center">
+            <thead>
+                <tr>
+                    <th scope="col">EmployeeId</th>
+                    <th scope="col">LastName</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">BirthDate</th>
+                    <th scope="col">HireDate</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">PostalCode</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Fax</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody class="list">
+
+                @foreach (var employee in @Model.employees)
+               { <tr>
+
+                    <td> @employee.EmployeeId </td>
+                    <td> @employee.LastName </td>
+                    <td> @employee.FirstName </td>
+                    <td> @employee.Title </td>
+                    <td> @employee.BirthDate </td>
+                    <td> @employee.HireDate </td>
+                    <td> @employee.City </td>
+                    <td> @employee.State </td>
+                    <td> @employee.Country </td>
+                    <td> @employee.PostalCode </td>
+                    <td> @employee.Phone </td>
+                    <td> @employee.Fax </td>
+                    <td> @employee.Email </td>
+                    <td class="text-right">
+                        <!-- Actions -->
+                        <div class="actions ml-3">
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Quick view">
+                                <i class="uil-external-link-alt "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Edit">
+                                <i class="uil-pen "></i>
+                            </a>
+                            <a href="#" class="btn btn-icon btn-hover btn-sm btn-circle"
+                               uk-tooltip="Delete user">
+                                <i class="uil-trash-alt text-danger"></i>
+                            </a>
+                        </div>
+                    </td>
+                    </tr>
+                }
+                
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<partial name="Partial Pages/Pagination" model="@(new PaginationModel (Model.all.Count, "/Operations/Employee"))" />

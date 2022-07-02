@@ -1,0 +1,12 @@
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/bin/Debug/netcoreapp3.1/Mozika.EFCore.deps.json
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/bin/Debug/netcoreapp3.1/Mozika.EFCore.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/bin/Debug/netcoreapp3.1/Mozika.EFCore.pdb
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/bin/Debug/netcoreapp3.1/Mozika.Domain.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/bin/Debug/netcoreapp3.1/Mozika.Domain.pdb
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.csprojAssemblyReference.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.AssemblyInfoInputs.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.AssemblyInfo.cs
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.csproj.CoreCompileInputs.cache
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.csproj.CopyComplete
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.dll
+/Users/andy/Projects/Repositories/Mozika/Mozika/Mozika.EFCore/obj/Debug/netcoreapp3.1/Mozika.EFCore.pdb
